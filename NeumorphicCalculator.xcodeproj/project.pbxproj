@@ -11,6 +11,7 @@
 		933B8037299D565000ACE9EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933B8036299D565000ACE9EC /* ContentView.swift */; };
 		933B8039299D565100ACE9EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 933B8038299D565100ACE9EC /* Assets.xcassets */; };
 		933B803C299D565100ACE9EC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 933B803B299D565100ACE9EC /* Preview Assets.xcassets */; };
+		933B8044299D568800ACE9EC /* Neumorphic in Frameworks */ = {isa = PBXBuildFile; productRef = 933B8043299D568800ACE9EC /* Neumorphic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				933B8044299D568800ACE9EC /* Neumorphic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = NeumorphicCalculator;
+			packageProductDependencies = (
+				933B8043299D568800ACE9EC /* Neumorphic */,
+			);
 			productName = NeumorphicCalculator;
 			productReference = 933B8031299D565000ACE9EC /* NeumorphicCalculator.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = 933B8028299D565000ACE9EC;
+			packageReferences = (
+				933B8042299D568800ACE9EC /* XCRemoteSwiftPackageReference "neumorphic" */,
+			);
 			productRefGroup = 933B8032299D565000ACE9EC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -339,6 +347,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		933B8042299D568800ACE9EC /* XCRemoteSwiftPackageReference "neumorphic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/costachung/neumorphic/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		933B8043299D568800ACE9EC /* Neumorphic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 933B8042299D568800ACE9EC /* XCRemoteSwiftPackageReference "neumorphic" */;
+			productName = Neumorphic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 933B8029299D565000ACE9EC /* Project object */;
 }
