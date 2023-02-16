@@ -8,15 +8,72 @@
 import SwiftUI
 import Neumorphic
 
+enum CalculatorButton: String {
+    case zero, one, two, three, four, five, six, seven, eight, nine
+    case equals, plus, minus, multiply, divide
+    case ac, plusMinus, percent
+    
+    var title: String {
+        switch self {
+        case .zero:
+            return "0"
+        case .one:
+            return "1"
+        case .two:
+            return "2"
+        case .three:
+            return "3"
+        case .four:
+            return "4"
+        case .five:
+            return "5"
+        case .six:
+            return "6"
+        case .seven:
+            return "7"
+        case .eight:
+            return "8"
+        case .nine:
+            return "9"
+        case .equals:
+            return "10"
+        case .plus:
+            return "+"
+        case .minus:
+            return "-"
+        case .multiply:
+            return "x"
+        case .divide:
+            return "÷"
+        case .ac:
+            return "AC"
+        case .plusMinus:
+            return "+/-"
+        case .percent:
+            return "%"
+        }
+    }
+    
+    var textColor: Color {
+        switch self {
+        case .zero, .one, .two, .three, .four, .five, .six, .seven, .eight, .nine:
+            return Color.white
+        case .ac, .plus, .minus,.plusMinus, .percent, .divide, .multiply:
+            return Color(UIColor(named: "darkGreen")!)
+        default:
+            return Color.black
+        }
+    }
+}
+
 struct ContentView: View {
     
     
-    let buttons = [
-        ["AC", "+/-", "%", "÷"],
-        ["7", "8", "9", "x"],
-        ["4", "5", "6", "-"],
-        ["1", "2", "3", "+"],
-        ["0", ".", ".", "="],
+    let buttons: [[CalculatorButton]] = [
+        [.ac, .plusMinus, .percent, .divide],
+        [.seven, .eight, .nine, .multiply],
+        [.four, .five, .six, .minus],
+        [.one, .two, .three, .plus],
     ]
     
     
@@ -40,9 +97,9 @@ struct ContentView: View {
                     HStack(spacing: 15) {
                         ForEach(row, id: \.self) { button in
                             Button(action: {}) {
-                                Text(button)
+                                Text(button.title)
                                     .fontWeight(.bold)
-                                    .foregroundColor(.black)
+                                    .foregroundColor(button.textColor)
                                     .frame(width: self.buttonWidth(), height: self.buttonWidth()).font(.system(size: 30))
                             }.softButtonStyle(RoundedRectangle(cornerRadius: 20), pressedEffect: .hard)
                         }
