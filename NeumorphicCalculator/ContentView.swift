@@ -9,6 +9,16 @@ import SwiftUI
 import Neumorphic
 
 struct ContentView: View {
+    
+    
+    let buttons = [
+        ["7", "8", "9", "x"],
+        ["4", "5", "6", "-"],
+        ["1", "2", "3", "+"],
+        ["0", ".", ".", "="],
+    ]
+    
+    
     var body: some View {
         let mainColor = Color.Neumorphic.main
         ZStack {
@@ -29,7 +39,6 @@ struct ContentView: View {
             Spacer()
         }
     }
-        .padding()
     }
 }
 
