@@ -21,23 +21,29 @@ struct ContentView: View {
     
     var body: some View {
         let mainColor = Color.Neumorphic.main
-        ZStack {
+        ZStack (alignment: .bottom){
+            
+
             mainColor.edgesIgnoringSafeArea(.all)
-        HStack {
-            Spacer()
-            Button(action: {}) {
-                Text(".none").fontWeight(.bold)
-            }.softButtonStyle(Capsule(), pressedEffect: .hard)
-            Spacer()
-            Button(action: {}) {
-                Text(".flat").fontWeight(.bold)
-            }.softButtonStyle(Capsule(), pressedEffect: .hard)
-            Spacer()
-            Button(action: {}) {
-                Text(".hard").fontWeight(.bold)
-            }.softButtonStyle(Capsule(), pressedEffect: .hard)
-            Spacer()
-        }
+            VStack{
+                ZStack {
+                    RoundedRectangle(cornerRadius: 20).fill(Color.Neumorphic.main).softOuterShadow()
+                    HStack {Spacer()
+                        Text("42").foregroundColor(.black).font(.system(size: 64))}.padding()
+                    
+                }.padding()
+                    ForEach(buttons, id: \.self) { row in
+                        HStack {
+                            ForEach(row, id: \.self) { button in
+                                Button(action: {}) {
+                                    Text(button).fontWeight(.bold).frame(width: 50, height: 50)
+                                }.softButtonStyle(Capsule(), pressedEffect: .hard)
+                            }
+                        }
+                    }
+
+                
+            }
     }
     }
 }
